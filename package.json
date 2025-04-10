@@ -4,7 +4,6 @@
   "private": true,
   "description": "Green Field JS SDK",
   "scripts": {
-    "prepare": "husky install",
     "version": "pnpm install && changeset version",
     "clean": "rimraf node_modules **/*/node_modules",
     "build": "pnpm run -F \"./packages/**\" -r build"
