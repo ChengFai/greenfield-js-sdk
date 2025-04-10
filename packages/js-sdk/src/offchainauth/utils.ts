@@ -90,7 +90,7 @@ export const genSecondSignMsg = ({
   expireDate,
 }: TGenSecondSignMsgParams): string => {
   // NOTICE: DO NOT CHANGE THE TEMPLATE FORMAT
-  return `${domain} wants you to sign in with your Mechain account:${address}
+  return `${domain} wants you to sign in with your Moca Chain account:${address}
 Register your identity public key ${pubKey}
 URI: ${domain}
 Version: 1
