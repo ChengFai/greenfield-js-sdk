@@ -4,7 +4,7 @@ export declare const getChain: (chainConfig: ChainConfig) => {
         readonly default: {
             readonly name: "BscScan";
             readonly url: "https://testnet.bscscan.com";
-            readonly apiUrl: "https://testnet.bscscan.com/api";
+            readonly apiUrl: "https://api-testnet.bscscan.com/api";
         };
     };
     contracts: {
@@ -13,6 +13,7 @@ export declare const getChain: (chainConfig: ChainConfig) => {
             readonly blockCreated: 17422483;
         };
     };
+    ensTlds?: readonly string[] | undefined;
     id: 97;
     name: "Binance Smart Chain Testnet";
     nativeCurrency: {
@@ -25,7 +26,7 @@ export declare const getChain: (chainConfig: ChainConfig) => {
             readonly http: readonly ["https://data-seed-prebsc-1-s1.bnbchain.org:8545"];
         };
     };
-    sourceId?: number | undefined;
+    sourceId?: number | undefined | undefined;
     testnet: true;
     custom?: Record<string, unknown> | undefined;
     fees?: import("viem").ChainFees<undefined> | undefined;
@@ -45,6 +46,7 @@ export declare const getChain: (chainConfig: ChainConfig) => {
             readonly blockCreated: 15921452;
         };
     };
+    ensTlds?: readonly string[] | undefined;
     id: 56;
     name: "BNB Smart Chain";
     nativeCurrency: {
@@ -54,11 +56,11 @@ export declare const getChain: (chainConfig: ChainConfig) => {
     };
     rpcUrls: {
         readonly default: {
-            readonly http: readonly ["https://rpc.ankr.com/bsc"];
+            readonly http: readonly ["https://56.rpc.thirdweb.com"];
         };
     };
-    sourceId?: number | undefined;
-    testnet?: boolean | undefined;
+    sourceId?: number | undefined | undefined;
+    testnet?: boolean | undefined | undefined;
     custom?: Record<string, unknown> | undefined;
     fees?: import("viem").ChainFees<undefined> | undefined;
     formatters?: undefined;

@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import { VisibilityType } from '../common';
 export type BucketMeta = {
     /**
