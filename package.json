@@ -1,99 +1,108 @@
 {
   "name": "@bnb-chain/greenfield-js-sdk",
-  "version": "0.0.1",
-  "private": true,
-  "description": "Green Field JS SDK",
-  "scripts": {
-    "dev": "node ./scripts/dev.js -p 3200",
-    "dev1": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,md,html,yml}\"",
-    "analyze": "ANALYZE=true pnpm run build",
-    "lint-staged": "lint-staged",
-    "type-check": "tsc"
+  "version": "2.2.1",
+  "description": "greenfield js chain and sp sdk",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/**.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/types/**.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "browser": {
+    "./dist/cjs/index.js": "./dist/cjs/index.js",
+    "./dist/esm/index.js": "./dist/esm/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChengFai/greenfield-js-sdk",
+    "directory": "packages/js-sdk"
+  },
+  "keywords": [
+    "greenfiled",
+    "js-sdk"
+  ],
+  "author": "",
+  "license": "GPLv3",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version",
+      "last 2 edge version"
+    ]
   },
   "dependencies": {
     "@bnb-chain/greenfield-cosmos-types": "0.4.0-alpha.32",
-    "@bnb-chain/greenfield-js-sdk": "2.2.1",
-    "@bnb-chain/reed-solomon": "~1.1.3",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@next/bundle-analyzer": "^13.1.6",
-    "@node-real/icons": "~2.20.3",
-    "@node-real/uikit": "~2.54.8",
-    "@node-real/walletkit": "1.0.12-alpha.1",
-    "@reduxjs/toolkit": "^1.9.5",
-    "@sentry/nextjs": "~7.86.0",
-    "@wagmi/core": "~1.4.10",
-    "@zkmelabs/storage-sdk-js": "~0.0.3",
-    "ahooks": "3.7.7",
-    "antd": "5.11.0",
-    "apollo-node-client": "1.4.3",
-    "async-mutex": "~0.5.0",
-    "axios": "^1.3.2",
-    "axios-retry": "^3.4.0",
-    "bignumber.js": "^9.1.1",
-    "classnames": "^2.3.2",
-    "comlink": "^4.4.1",
+    "@cosmjs/proto-signing": "^0.32.0",
+    "@cosmjs/stargate": "^0.32.0",
+    "@cosmjs/tendermint-rpc": "^0.32.0",
+    "@ethersproject/base64": "^5.7.0",
+    "@ethersproject/bytes": "5.7.0",
+    "@ethersproject/signing-key": "^5.8.0",
+    "@ethersproject/strings": "5.7.0",
+    "@ethersproject/units": "^5.7.0",
+    "@metamask/eth-sig-util": "^5.0.2",
+    "@noble/curves": "^1.3.0",
+    "browser-or-node": "^3.0.0",
+    "cross-fetch": "^4.0.0",
     "dayjs": "^1.11.7",
-    "echarts": "~5.4.3",
-    "echarts-for-react": "~3.0.2",
-    "ethers": "^5.7.2",
-    "fast-xml-parser": "~4.2.7",
-    "flatted": "~3.3.1",
-    "hash-wasm": "4.10.0",
-    "lodash-es": "^4.17.21",
-    "next": "~14.1.1",
-    "next-redux-wrapper": "^8.1.0",
-    "next-transpile-modules": "~10.0.1",
-    "query-string": "^8.1.0",
-    "radash": "~12.1.0",
-    "react": "~18.2.0",
-    "react-dnd": "16.0.1",
-    "react-dnd-html5-backend": "16.0.1",
-    "react-dom": "~18.2.0",
-    "react-hook-form": "^7.43.1",
-    "react-redux": "^8.1.1",
-    "react-use": "^17.4.0",
-    "redux": "~4.2.1",
-    "redux-persist": "^6.0.0",
-    "set-interval-async": "~3.0.3",
-    "swiper": "~10.3.1",
-    "typescript": "5.2.2",
-    "viem": "~1.19.11",
-    "wagmi": "~1.4.10"
+    "ethereum-cryptography": "^2.0.0",
+    "fast-xml-parser": "^4.2.7",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.get": "^4.4.2",
+    "lodash.mapvalues": "^4.6.0",
+    "lodash.set": "^4.3.2",
+    "lodash.sortby": "^4.7.0",
+    "long": "^5.2.1",
+    "mime-types": "^2.1.35",
+    "reflect-metadata": "^0.1.13",
+    "superagent": "^9.0.2",
+    "tsyringe": "^4.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.3",
-    "@commitlint/config-conventional": "^17.4.3",
-    "@next/eslint-plugin-next": "^13.1.6",
-    "@svgr/webpack": "^6.5.1",
-    "@types/lodash-es": "^4.17.6",
-    "@types/node": "18.16.0",
-    "@types/react": "18.0.38",
-    "@types/react-dom": "18.0.11",
-    "@typescript-eslint/eslint-plugin": "~7.0.2",
-    "@typescript-eslint/parser": "~7.0.2",
-    "eslint": "~8.56.0",
-    "eslint-config-next": "~14.1.1",
-    "eslint-config-prettier": "~9.1.0",
-    "eslint-plugin-react": "~7.33.2",
-    "eslint-plugin-react-hooks": "~4.6.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.1",
-    "prettier": "^2.8.4",
-    "tsc-files": "~1.1.4"
+    "@jest/globals": "^29.5.0",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@types/jest": "^29.5.1",
+    "@types/lodash.clonedeep": "^4.5.7",
+    "@types/lodash.get": "^4.4.7",
+    "@types/lodash.mapvalues": "^4.6.7",
+    "@types/lodash.set": "^4.3.7",
+    "@types/lodash.sortby": "^4.7.7",
+    "@types/mime": "^3.0.1",
+    "@types/mime-types": "^2.1.4",
+    "@types/superagent": "^8.1.7",
+    "@types/xml2js": "^0.4.11",
+    "dotenv": "^16.0.3",
+    "jest": "^29.5.0",
+    "mime": "^3.0.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,less,md}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": "tsc-files --noEmit"
+  "scripts": {
+    "predev": "rimraf ./dist",
+    "dev": "rollup -cw",
+    "prebuild": "rimraf ./dist",
+    "build": "rollup -c",
+    "test": "jest --runInBand",
+    "lint": "prettier --write './src/*.{ts,tsx,js,jsx}' && eslint ./src/ --ext .js,.jsx,.ts,.tsx --fix"
   }
 }
